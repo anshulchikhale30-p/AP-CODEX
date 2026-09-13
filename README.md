@@ -158,9 +158,10 @@ interactive API docs live at **http://localhost:8000/docs**.
 
 ### Deploy to Vercel
 
-The repo is pre-configured for Vercel (`pyproject.toml` points the entrypoint at
-`src/app.py`, `vercel.json` lifts the function timeout to 60s). Import the repo
-in Vercel and set these environment variables (Settings → Environment Variables):
+The repo is pre-configured for Vercel — the entrypoint is auto-detected at
+`src/app.py` (no `pyproject.toml` needed) and `vercel.json` lifts the function
+timeout to 60s. Import the repo in Vercel and set these environment variables
+(Settings → Environment Variables):
 
 ```bash
 AP_CODEX_API_KEY=sk-...       # or OPENAI_API_KEY
