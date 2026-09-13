@@ -53,11 +53,19 @@
   var form = document.getElementById("promptForm");
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    if (!input.value.trim()) return;
-    var original = input.value;
+    var message = input.value.trim();
+    if (!message) return;
+
+    if (window.APCODEXChat && window.APCODEXChat.send) {
+      window.APCODEXChat.send(message);
+      input.value = "";
+      typing.style.opacity = 1;
+      return;
+    }
+
     input.value = "";
     typing.style.opacity = 0;
-    input.placeholder = "Working on \u201C" + original + "\u201D...";
+    input.placeholder = "Working on \u201C" + message + "\u201D...";
     setTimeout(function () {
       input.placeholder = "Ask AP-CODEX to do anything...";
     }, 1800);

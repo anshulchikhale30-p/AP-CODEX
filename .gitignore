@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environment / secrets
+.env
+.env.local
+ap-codex-outbox.json
+gmail_credentials.json
+gmail_tokens.json
+calendar_tokens.json
+meet_tokens.json
+twitter_credentials.json
+users.json
+google_signin_tokens.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

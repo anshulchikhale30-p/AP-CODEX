@@ -30,11 +30,17 @@
         </div>
       </div>
       <div class="nav-right">
-        <a class="btn btn-ghost" href="#">Sign in</a>
-        <a class="btn btn-primary" href="#">
-          <span class="btn-label">Sign up</span>
-          <span class="btn-shine"></span>
-        </a>
+        <span class="nav-user" id="navUser" hidden>
+          <span class="nav-user-name" id="navUserName"></span>
+          <button class="btn btn-ghost" id="authSignout" type="button">Sign out</button>
+        </span>
+        <span class="nav-auth" id="navAuth">
+          <a class="btn btn-ghost" href="#" id="authSigninBtn">Sign in</a>
+          <a class="btn btn-primary" href="#" id="authSignupBtn">
+            <span class="btn-label">Sign up</span>
+            <span class="btn-shine"></span>
+          </a>
+        </span>
         <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -84,11 +90,9 @@
         </form>
 
         <div class="hero-chips reveal">
-          <a class="chip" href="#">Create slides</a>
-          <a class="chip" href="#">Build website</a>
-          <a class="chip" href="#">Design</a>
-          <a class="chip" href="#">Create games</a>
-          <a class="chip" href="#">More</a>
+          <a class="chip" href="#">Email my manager that I&rsquo;m running late</a>
+          <a class="chip" href="#">Add a team standup to my calendar</a>
+          <a class="chip" href="#">Create a Google Meet</a>
         </div>
 
         <div class="stats reveal">
@@ -272,6 +276,115 @@
     </div>
   </footer>
 
+  <!-- Auth modal -->
+  <div class="auth-veil" id="authVeil" aria-hidden="true">
+    <section class="auth-panel" role="dialog" aria-modal="true" aria-label="Account">
+      <button class="auth-close" id="authClose" type="button" aria-label="Close auth">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M4 4l8 8m0-8-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+        </svg>
+      </button>
+      <div class="auth-head">
+        <h2 class="auth-title">Welcome to AP-CODEX</h2>
+        <div class="auth-tabs">
+          <button class="auth-tab active" type="button" data-auth-tab="signin">Sign in</button>
+          <button class="auth-tab" type="button" data-auth-tab="signup">Sign up</button>
+        </div>
+      </div>
+
+      <div class="auth-body">
+        <button class="auth-google" id="authGoogle" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#4285F4" d="M23.5 12.3c0-.9-.1-1.6-.3-2.3H12.2v4.5h6.4c-.3 1.5-1.1 2.8-2.4 3.6v3h3.8c2.2-2.1 3.5-5.1 3.5-8.8Z"/>
+            <path fill="#34A853" d="M12.2 24c3.2 0 5.9-1.1 7.9-2.9l-3.8-3c-1 .7-2.4 1.2-4.1 1.2-3.1 0-5.8-2.1-6.8-5l-3.9 3C3.5 21.3 7.5 24 12.2 24Z"/>
+            <path fill="#FBBC05" d="M5.4 14.3a7.3 7.3 0 0 1 0-4.6L1.5 6.7a11.9 11.9 0 0 0 0 10.6l3.9-3Z"/>
+            <path fill="#EA4335" d="M12.2 4.7c1.8 0 3.3.6 4.6 1.8l3.4-3.4C18.1 1.2 15.4 0 12.2 0 7.5 0 3.5 2.7 1.5 6.7l3.9 3c1-2.9 3.7-5 6.8-5Z"/>
+          </svg>
+          <span>Continue with Google</span>
+        </button>
+
+        <div class="auth-divider"><span>or</span></div>
+
+        <form class="auth-form" id="signinForm" data-auth-form="signin">
+          <label class="auth-field">
+            <span>Email</span>
+            <input type="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+          </label>
+          <label class="auth-field">
+            <span>Password</span>
+            <input type="password" name="password" required autocomplete="current-password" placeholder="••••••••" />
+          </label>
+          <p class="auth-error" id="signinError" role="alert"></p>
+          <button class="btn btn-primary auth-submit" type="submit">Sign in</button>
+        </form>
+
+        <form class="auth-form" id="signupForm" data-auth-form="signup" hidden>
+          <label class="auth-field">
+            <span>Name</span>
+            <input type="text" name="name" required autocomplete="name" placeholder="Ada Lovelace" />
+          </label>
+          <label class="auth-field">
+            <span>Email</span>
+            <input type="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+          </label>
+          <label class="auth-field">
+            <span>Password</span>
+            <input type="password" name="password" required minlength="8" autocomplete="new-password" placeholder="At least 8 characters" />
+          </label>
+          <p class="auth-error" id="signupError" role="alert"></p>
+          <button class="btn btn-primary auth-submit" type="submit">Create account</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- Chat console -->
+  <div class="chat-veil" id="chatVeil" aria-hidden="true">
+    <section class="chat-panel" id="chatPanel" role="dialog" aria-modal="true" aria-label="AP-CODEX chat console">
+      <header class="chat-head">
+        <div class="chat-head-left">
+          <span class="chat-logo">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 4h16v6h-6v10H4V4Z" fill="currentColor" />
+            </svg>
+          </span>
+          <div>
+            <div class="chat-title">AP-CODEX Console</div>
+            <div class="chat-sub" id="chatStatus" data-tone="idle"><span class="chat-dot"></span><span class="chat-status-label">idle</span></div>
+          </div>
+        </div>
+        <button class="chat-close" id="chatClose" aria-label="Close chat" type="button">
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M4 4l8 8m0-8-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+          </svg>
+        </button>
+      </header>
+
+      <div class="chat-thread" id="chatThread" aria-live="polite">
+        <div class="chat-welcome" id="chatWelcome">
+          <p class="chat-welcome-title">Hands-on console</p>
+          <p class="chat-welcome-text">Connect to the AP-CODEX engine and watch it plan, call tools, and reply — live. Start with an example below.</p>
+          <div class="chat-suggests">
+            <button type="button" class="chat-suggest">Email my manager that I&rsquo;m running late via Gmail</button>
+            <button type="button" class="chat-suggest">Add a team standup to my calendar tomorrow at 9 am</button>
+            <button type="button" class="chat-suggest">Create a Google Meet for the client call</button>
+          </div>
+        </div>
+      </div>
+
+      <form class="chat-composer" id="chatComposer">
+        <input type="text" id="chatInput" autocomplete="off" placeholder="Ask AP-CODEX to run a task..." aria-label="Chat message" />
+        <button type="submit" class="chat-send" id="chatSend" aria-label="Send message">
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M13.5 2.5 7 9m6.5-6.5L9 13.5 7 9 2.5 7 13.5 2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </form>
+    </section>
+  </div>
+
   <script src="script.js"></script>
+  <script src="chat.js"></script>
+  <script src="auth.js"></script>
 </body>
 </html>
