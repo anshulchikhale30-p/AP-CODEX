@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AP-CODEX: Hands On AI</title>
+  <meta name="description" content="AP-CODEX is the action engine that goes beyond answers to execute tasks, automate workflows, and extend your human reach." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="nav-wrap">
+    <nav class="nav container">
+      <div class="nav-left">
+        <a class="logo" href="#top">
+          <svg class="logo-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 4h16v6h-6v10H4V4Z" fill="currentColor" />
+            <path d="M14 14l4 4m0-4-4 4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span class="logo-text">AP-CODEX</span>
+        </a>
+        <div class="nav-links">
+          <a href="#features" class="nav-link" data-target="features">Features</a>
+          <a href="#solutions" class="nav-link" data-target="solutions">Solutions</a>
+          <a href="#resources" class="nav-link" data-target="resources">Resources</a>
+          <a href="#pricing" class="nav-link" data-target="pricing">Pricing</a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <a class="btn btn-ghost" href="#">Sign in</a>
+        <a class="btn btn-primary" href="#">
+          <span class="btn-label">Sign up</span>
+          <span class="btn-shine"></span>
+        </a>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="aurora" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+      </div>
+
+      <div class="container hero-inner">
+        <a class="hero-badge reveal" href="#">
+          <span class="badge-dot"></span>
+          Introducing AP-CODEX 2.0
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+
+        <h1 class="hero-title reveal">
+          What can I do<br />
+          <span class="grad-text">for you?</span>
+        </h1>
+
+        <p class="hero-sub reveal">Less structure, more intelligence.</p>
+
+        <form class="prompt-box reveal" id="promptForm">
+          <svg class="prompt-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 3v12m0-12L8 7m4-4 4 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            <rect x="3" y="14" width="18" height="7" rx="2.5" stroke="currentColor" stroke-width="1.8" />
+          </svg>
+          <input type="text" id="promptInput" autocomplete="off" aria-label="Ask AP-CODEX to do anything"
+            placeholder="Ask AP-CODEX to do anything..." />
+          <span class="prompt-typing" id="promptTyping">Build a website for my startup</span>
+          <span class="prompt-caret"></span>
+          <button class="prompt-submit" type="submit" aria-label="Send">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M13.5 2.5 7 9m6.5-6.5L9 13.5 7 9 2.5 7 13.5 2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </form>
+
+        <div class="hero-chips reveal">
+          <a class="chip" href="#">Create slides</a>
+          <a class="chip" href="#">Build website</a>
+          <a class="chip" href="#">Design</a>
+          <a class="chip" href="#">Create games</a>
+          <a class="chip" href="#">More</a>
+        </div>
+
+        <div class="stats reveal">
+          <div class="stat"><strong data-count="420" data-suffix="k+">0</strong><span>tasks completed</span></div>
+          <div class="stat"><strong data-count="180" data-suffix="+">0</strong><span>countries</span></div>
+          <div class="stat"><strong data-count="9" data-suffix=".8">0</strong><span>avg. rating</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshot / demo -->
+    <section class="demo">
+      <div class="container reveal">
+        <div class="demo-frame" id="tiltFrame">
+          <div class="demo-toolbar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <div class="demo-tab">AP-CODEX</div>
+            <span class="demo-url">app.ap-codex.ai/chat</span>
+          </div>
+          <div class="demo-body">
+            <aside class="demo-sidebar">
+              <div class="demo-side-title">Recent conversations</div>
+              <div class="demo-item active">Build a website for my startup</div>
+              <div class="demo-item">Analyze last quarter's revenue</div>
+              <div class="demo-item">Design a sales deck</div>
+              <div class="demo-item">Automate weekly email reports</div>
+            </aside>
+            <div class="demo-chat">
+              <div class="demo-msg user">Build a website for my startup</div>
+              <div class="demo-msg agent">
+                <div class="agent-avatar">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 4h16v6h-6v10H4V4Z" fill="currentColor" />
+                  </svg>
+                </div>
+                <div class="agent-content">
+                  <p class="agent-head">AP-CODEX</p>
+                  <p class="agent-text">On it. I'll plan the site structure, pick a stack, and show you a working preview you can edit live.</p>
+                  <div class="agent-steps">
+                    <span class="step done">Planning structure</span>
+                    <span class="step active">Scaffolding project</span>
+                    <span class="step">Designing the page</span>
+                    <span class="step">Deploying preview</span>
+                  </div>
+                </div>
+              </div>
+              <div class="demo-msg user">Add a dark mode and a pricing section.</div>
+              <div class="demo-msg agent typing-line"><span></span><span></span><span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities grid -->
+    <section class="features container" id="features">
+      <h2 class="section-title reveal">Where answers end,<br /><span class="grad-text">AP-CODEX begins.</span></h2>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon">&#128193;</div>
+          <h3>Deep research</h3>
+          <p>Gather, cross-check, and synthesize sources into clear reports.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">&#128187;</div>
+          <h3>Build &amp; ship</h3>
+          <p>Go from idea to working app or website with real, deployable output.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">&#127912;</div>
+          <h3>Design</h3>
+          <p>Turn rough ideas into polished designs and slide decks.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">&#9889;</div>
+          <h3>Automate workflows</h3>
+          <p>Chain tasks together so repetitive work happens by itself.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions strip -->
+    <section class="solutions container" id="solutions">
+      <div class="marquee-wrap reveal">
+        <div class="marquee">
+          <div class="marquee-track">
+            <span>Research</span><span>Websites</span><span>Slides</span><span>Apps</span>
+            <span>Design</span><span>Reports</span><span>Automation</span><span>Games</span>
+            <span>Data analysis</span><span>Writing</span>
+          </div>
+          <div class="marquee-track" aria-hidden="true">
+            <span>Research</span><span>Websites</span><span>Slides</span><span>Apps</span>
+            <span>Design</span><span>Reports</span><span>Automation</span><span>Games</span>
+            <span>Data analysis</span><span>Writing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing teaser -->
+    <section class="pricing container" id="pricing">
+      <div class="pricing-box reveal">
+        <div class="pricing-mark">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 4h16v6h-6v10H4V4Z" fill="currentColor" />
+            <path d="M14 14l4 4m0-4-4 4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <h2>AP-CODEX for Teams</h2>
+        <p>One engine for everyone on your team. SSO, shared workspaces, admin controls, and usage analytics.</p>
+        <a class="btn btn-primary btn-lg" href="#">
+          <span class="btn-label">Explore plans</span>
+          <span class="btn-shine"></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-col footer-brand">
+        <a class="logo" href="#top">
+          <svg class="logo-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 4h16v6h-6v10H4V4Z" fill="currentColor" />
+            <path d="M14 14l4 4m0-4-4 4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span class="logo-text">AP-CODEX</span>
+        </a>
+        <p>Hands-on AI that executes your tasks end to end.</p>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M4.5 3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM3 8h3v9H3V8Zm5 0h2.9v1.3h.05c.4-.75 1.4-1.55 2.9-1.55 3.1 0 3.65 2 3.65 4.65V17h-3v-3.9c0-.95 0-2.15-1.3-2.15-1.3 0-1.5 1-1.5 2.05V17h-3V8Z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M11.7 8.6 17.2 2h-1.3l-4.8 5.5L6.9 2H2.4l5.8 8.3L2.4 17h1.3l5.1-5.8 4 5.8h4.5l-6-8.5Zm-1.8 2-.6-.8L3.9 3.3h2l3.9 5.5.6.8 5 7h-2l-4.5-6.3Z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M17.6 5.2a2.2 2.2 0 0 0-1.5-1.6C14.8 3.2 10 3.2 10 3.2s-4.8 0-6.1.4A2.2 2.2 0 0 0 2.4 5.2 24 24 0 0 0 2 10a24 24 0 0 0 .4 4.8 2.15 2.15 0 0 0 1.5 1.6c1.3.4 6.1.4 6.1.4s4.8 0 6.1-.4a2.2 2.2 0 0 0 1.5-1.6 24 24 0 0 0 .4-4.8 24 24 0 0 0-.4-4.8ZM8.4 12.7V7.3l4.3 2.7-4.3 2.7Z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2.8c2.6 0 2.9 0 4 .1 1 0 1.5.2 1.8.3.5.2.8.4 1.1.8.4.4.6.7.8 1.1.1.3.3.9.3 1.8.1 1.1.1 1.4.1 4s0 2.9-.1 4c0 1-.2 1.5-.3 1.8a3 3 0 0 1-.8 1.1 3 3 0 0 1-1.1.8c-.3.1-.9.3-1.8.3-1.1.1-1.4.1-4 .1s-2.9 0-4-.1c-1 0-1.5-.2-1.8-.3a3 3 0 0 1-1.1-.8 3 3 0 0 1-.8-1.1c-.1-.3-.3-.9-.3-1.8-.1-1.1-.1-1.4-.1-4s0-2.9.1-4c0-1 .2-1.5.3-1.8.2-.5.4-.8.8-1.1.4-.4.7-.6 1.1-.8.3-.1.9-.3 1.8-.3 1.1-.1 1.4-.1 4-.1ZM10 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 1.8a3.2 3.2 0 1 1 0 6.4 3.2 3.2 0 0 1 0-6.4Zm5.2-3.1a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0Z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#">Web app</a>
+        <a href="#">AI design</a>
+        <a href="#">AI slides</a>
+        <a href="#">AP-CODEX browser operator</a>
+        <a href="#">Wide research</a>
+        <a href="#">Mail AP-CODEX</a>
+        <a href="#">Slack integration</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Download</a>
+        <a href="#">Blog</a>
+        <a href="#">Docs</a>
+        <a href="#">Updates</a>
+        <a href="#">Help center</a>
+        <a href="#">Trust center</a>
+        <a href="#">API</a>
+      </div>
+      <div class="footer-col">
+        <h4>Compare</h4>
+        <a href="#">VS ChatGPT</a>
+        <a href="#">VS Lovable</a>
+        <a href="#">VS Replit</a>
+        <a href="#">VS Claude</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About us</a>
+        <a href="#">Team</a>
+        <a href="#">Careers</a>
+        <a href="#">Events</a>
+        <a href="#">Press</a>
+        <a href="#">Terms of service</a>
+        <a href="#">Privacy policy</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>&copy; 2026 AP-CODEX</span>
+      <a href="#" class="footer-lang">English &#9662;</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
