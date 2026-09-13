@@ -156,6 +156,18 @@ uvicorn src.api.app:app --reload --port 8000
 Open **http://localhost:8000** — the landing page is served automatically, and
 interactive API docs live at **http://localhost:8000/docs**.
 
+### Deploy to Vercel
+
+The repo is pre-configured for Vercel (`pyproject.toml` points the entrypoint at
+`src/app.py`, `vercel.json` lifts the function timeout to 60s). Import the repo
+in Vercel and set these environment variables (Settings → Environment Variables):
+
+```bash
+AP_CODEX_API_KEY=sk-...       # or OPENAI_API_KEY
+AP_CODEX_MODEL=gpt-4o-mini
+AP_CODEX_API_BASE=https://api.openai.com/v1
+```
+
 ### 4. Run tests
 
 ```bash
