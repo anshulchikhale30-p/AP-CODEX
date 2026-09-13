@@ -1,2 +1,2 @@
 [tool.vercel]
-entrypoint = "src/app.py"
+entrypoint = "src.app:app"
